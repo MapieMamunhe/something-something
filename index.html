@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8d7da, #fce4ec);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+        }
+        h1 {
+            color: #d81b60;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: #f48fb1;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .modal-content {
+            background: #fce4ec;
+            border: 2px solid #d81b60;
+            border-radius: 10px;
+        }
+        .modal-header, .modal-footer {
+            border: none;
+        }
+        .modal-title {
+            color: #d81b60;
+        }
+        .btn-primary {
+            background-color: #d81b60;
+            border-color: #d81b60;
+        }
+        .btn-primary:hover {
+            background-color: #c2185b;
+            border-color: #c2185b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>From your one and only Software Engineer <br>(It's not just desire)</h1>
+        <div class="image-placeholder">Picture Space</div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="xnucModal" tabindex="-1" aria-labelledby="xnucModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="xnucModalLabel">Enter XNUC</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="xnucInput" placeholder="Enter XNUC">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="checkXNUC()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script >
+        document.addEventListener('DOMContentLoaded', function() {
+    var xnucModal = new bootstrap.Modal(document.getElementById('xnucModal'), {
+        backdrop: 'static',
+        keyboard: false
+    });
+    xnucModal.show();
+});
+
+function checkXNUC() {
+    var input = document.getElementById('xnucInput').value;
+    if (input.toLowerCase() !== 'X241328') {
+        location.reload();
+    } else {
+        var modal = bootstrap.Modal.getInstance(document.getElementById('xnucModal'));
+        modal.hide();
+    }
+}
+    </script>
+</body>
+</html>

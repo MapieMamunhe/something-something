@@ -21,6 +21,7 @@
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             max-width: 600px;
+            display: none; /* Hidden by default */
         }
         h1 {
             color: #d81b60;
@@ -62,7 +63,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="mainContent">
         <h1>From your one and only Software Engineer <br>(It's not just desire)</h1>
         <div class="image-placeholder">Picture Space</div>
     </div>
@@ -86,24 +87,25 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script >
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-    var xnucModal = new bootstrap.Modal(document.getElementById('xnucModal'), {
-        backdrop: 'static',
-        keyboard: false
-    });
-    xnucModal.show();
-});
+            var xnucModal = new bootstrap.Modal(document.getElementById('xnucModal'), {
+                backdrop: 'static',
+                keyboard: false
+            });
+            xnucModal.show();
+        });
 
-function checkXNUC() {
-    var input = document.getElementById('xnucInput').value;
-    if (input.toLowerCase() !== 'x241328') {
-        location.reload();
-    } else {
-        var modal = bootstrap.Modal.getInstance(document.getElementById('xnucModal'));
-        modal.hide();
-    }
-}
+        function checkXNUC() {
+            var input = document.getElementById('xnucInput').value;
+            if (input.toLowerCase() !== 'x241328') {
+                location.reload();
+            } else {
+                var modal = bootstrap.Modal.getInstance(document.getElementById('xnucModal'));
+                modal.hide();
+                document.getElementById('mainContent').style.display = 'block';
+            }
+        }
     </script>
 </body>
 </html>

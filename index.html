@@ -31,20 +31,19 @@
         }
         .image-placeholder {
             width: 100%;
-            height: 300px;
+            max-height: 300px;
             background: #f48fb1;
             border-radius: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
-            font-size: 1.2rem;
             margin-top: 20px;
+            overflow: hidden;
         }
         .image-placeholder img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-height: 300px;
+            object-fit: contain; /* Ensure image fits without cropping */
             border-radius: 10px;
         }
         .modal-content {
